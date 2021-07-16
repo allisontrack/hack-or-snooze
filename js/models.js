@@ -74,6 +74,25 @@ class StoryList {
    */
 
   async addStory( /* user, newStory */) {
+
+
+    await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories', {params {
+
+      user: user,
+      story: newStory
+
+
+    })
+
+
+
+
+
+
+
+
+
+
     // UNIMPLEMENTED: complete this function!
   }
 }

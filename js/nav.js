@@ -34,3 +34,22 @@ function updateNavOnLogin() {
   $navLogOut.show();
   $navUserProfile.text(`${currentUser.username}`).show();
 }
+
+
+// make story from form from nav button
+// const new Story whatevs =
+
+// {
+//   "story": {
+//     "author": "Matt Lane",
+//     "createdAt": "017-11-09T18:38:39.409Z",
+//     "storyId": "5081e46e-3143-4c0c-bbf4-c22eb11eb3f5",
+//     "title": "The Best Story Ever",
+//     "updatedAt": "017-11-09T18:38:39.409Z",
+//     "url": "https://www.rithmschool.com/blog/do-web-developers-need-to-be-good-at-math",
+//     "username": "hueter"
+//   }
+// }
+
+
+// make form here

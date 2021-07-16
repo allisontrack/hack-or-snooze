@@ -50,3 +50,6 @@ function putStoriesOnPage() {
 
   $allStoriesList.show();
 }
+
+
+// add new story to page here

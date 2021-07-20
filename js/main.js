@@ -25,7 +25,7 @@ function hidePageComponents() {
     $loginForm,
     $signupForm,
   ];
-  components.forEach(c => c.hide());
+  components.forEach(component => component.hide());
 }
 
 /** Overall function to kick off the app. */

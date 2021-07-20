@@ -36,6 +36,10 @@ function updateNavOnLogin() {
 }
 
 
+
+
+function createNewStoryFromSubmit() {
+
 // make story from form from nav button
 // const new Story whatevs =
 
@@ -52,4 +56,21 @@ function updateNavOnLogin() {
 // }
 
 
-// make form here
+
+
+
+}
+
+
+
+function showListOfFavourites() {
+
+
+}
+
+
+
+function showListOfUserStories() {
+
+  
+}

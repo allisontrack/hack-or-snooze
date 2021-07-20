@@ -53,3 +53,26 @@ function putStoriesOnPage() {
 
 
 // add new story to page here
+
+function addNewStoryToPage() {
+
+
+}
+
+
+
+function removeStoryFromPage() {
+
+
+}
+
+
+function favouriteAStoryOnPage() {
+
+
+}
+
+function unfavouriteAStoryOnPage() {
+
+  
+}

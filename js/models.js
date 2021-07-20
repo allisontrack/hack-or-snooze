@@ -76,18 +76,28 @@ class StoryList {
   async addStory( /* user, newStory */) {
 
 
-    await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories', {params {
+    // to add a new story:
+      // i need a user
+        // with a token
+      // who will create a story 
+        // with a title, url, and author
+        // this will make use of the new Story (class)
+          // which takes a storyId, title, author, url, username, createdAt
 
-      user: user,
-      story: newStory
+          // questions: 
+            // how to generate an id
+            // how to generate a time stamp
+
+    const token = user.token
+
+    const response = await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories', {params: {token, url, author, title } } )
+
+    const story = new Story(response)
 
 
-    })
 
 
-
-
-
+    addNewStoryToPage()
 
 
 
@@ -95,6 +105,16 @@ class StoryList {
 
     // UNIMPLEMENTED: complete this function!
   }
+
+
+  async removeStory(user, storyId) {
+
+    const response = await axios.delete() 
+
+    removeStoryFromPage();
+
+  }
+
 }
 
 
@@ -212,4 +232,18 @@ class User {
       return null;
     }
   }
+
+
+
+
+  addToFavouriteStories(storyId) {
+
+
+  }
+
+  removeFromFavouriteStories(storyId) {
+
+  }
+
+
 }

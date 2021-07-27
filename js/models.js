@@ -73,7 +73,7 @@ class StoryList {
    * Returns the new Story instance
    */
 
-  async addStory( /* user, newStory */) {
+  async addStory(userCreator, newStory) {
 
 
     // to add a new story:
@@ -88,16 +88,27 @@ class StoryList {
             // how to generate an id
             // how to generate a time stamp
 
-    const token = user.token
+    console.log("this is userCreator", userCreator);          
+    const token = userCreator.loginToken
+    
+    const params = {token: token, story: {
+      author: newStory.author,
+      title: newStory.title,
+      url: newStory.url
+    } };
 
-    const response = await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories', {params: {token, url, author, title } } )
+    console.log("these are params", params);
 
-    const story = new Story(response)
+    const response = await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories', params  )
+
+    console.log(response);
+
+    const createdStory = new Story(response.data.story)
 
 
 
 
-    addNewStoryToPage()
+    return createdStory;
 
 
 

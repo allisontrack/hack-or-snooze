@@ -103,7 +103,7 @@ class StoryList {
     try {
       const response = await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories', params);
       const createdStory = new Story(response.data.story);
-      this.stories.push(createdStory);
+      this.stories.unshift(createdStory);
       console.log(this.stories);
       return createdStory;
     } catch {
@@ -113,7 +113,6 @@ class StoryList {
 
 
 
-    // UNIMPLEMENTED: complete this function!
   }
 
 

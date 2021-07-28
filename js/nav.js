@@ -36,9 +36,14 @@ function updateNavOnLogin() {
 }
 
 
-
+$navSubmit.on("click", createNewStoryFromSubmit);
 
 function createNewStoryFromSubmit() {
+  console.debug("createNewStoryFromSubmit");
+  hidePageComponents();
+  $submitForm.show()
+
+
 
 // make story from form from nav button
 // const new Story whatevs =
@@ -54,6 +59,8 @@ function createNewStoryFromSubmit() {
 //     "username": "hueter"
 //   }
 // }
+
+
 
 
 

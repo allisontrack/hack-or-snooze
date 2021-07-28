@@ -73,7 +73,7 @@ class StoryList {
    * Returns the new Story instance
    */
 
-  async addStory(userCreator, newStory) {
+  async addStory(userCreator, {title, author, url}) {
 
 
     // to add a new story:
@@ -92,25 +92,24 @@ class StoryList {
     const token = userCreator.loginToken
     
     const params = {token: token, story: {
-      author: newStory.author,
-      title: newStory.title,
-      url: newStory.url
+      author: author,
+      title: title,
+      url: url
     } };
 
     console.log("these are params", params);
 
-    const response = await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories', params  )
 
-    console.log(response);
-
-    const createdStory = new Story(response.data.story)
-
-
-
-
-    return createdStory;
-
-
+    try {
+      const response = await axios.post('https://hack-or-snooze-v3.herokuapp.com/stories', params);
+      const createdStory = new Story(response.data.story);
+      this.stories.push(createdStory);
+      console.log(this.stories);
+      return createdStory;
+    } catch {
+      console.error('             ')
+      return null;
+    }
 
 
 
@@ -247,8 +246,18 @@ class User {
 
 
 
-  addToFavouriteStories(storyId) {
+  async addToFavouriteStories(storyId) {
 
+    // const storyId = Story.storyId
+
+    try {
+      
+      const response = await axios.post(`https://hack-or-snooze-v3.herokuapp.com/users/${username}/favorites/${storyId}`);
+      console.log(response);
+
+    } catch {
+      console.error('             ')
+    }
 
   }
 
